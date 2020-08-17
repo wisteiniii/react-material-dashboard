@@ -15,12 +15,11 @@ import {
 } from '@material-ui/core';
 
 const user = {
-  avatar: '/static/images/avatars/avatar_6.png',
-  city: 'Los Angeles',
+  avatar: '/static/images/avatars/Kyle.jpg',
+  city: 'Springfield',
   country: 'USA',
-  jobTitle: 'Senior Developer',
-  name: 'Katarina Smith',
-  timezone: 'GTM-7'
+  jobTitle: 'Senior Manager',
+  name: 'Kyle Steinmetz'
 };
 
 const useStyles = makeStyles(() => ({
@@ -35,31 +34,14 @@ const Profile = ({ className, ...rest }) => {
   const classes = useStyles();
 
   return (
-    <Card
-      className={clsx(classes.root, className)}
-      {...rest}
-    >
+    <Card className={clsx(classes.root, className)} {...rest}>
       <CardContent>
-        <Box
-          alignItems="center"
-          display="flex"
-          flexDirection="column"
-        >
-          <Avatar
-            className={classes.avatar}
-            src={user.avatar}
-          />
-          <Typography
-            color="textPrimary"
-            gutterBottom
-            variant="h3"
-          >
+        <Box alignItems="center" display="flex" flexDirection="column">
+          <Avatar className={classes.avatar} src={user.avatar} />
+          <Typography color="textPrimary" gutterBottom variant="h3">
             {user.name}
           </Typography>
-          <Typography
-            color="textSecondary"
-            variant="body1"
-          >
+          <Typography color="textSecondary" variant="body1">
             {`${user.city} ${user.country}`}
           </Typography>
           <Typography
@@ -67,17 +49,13 @@ const Profile = ({ className, ...rest }) => {
             color="textSecondary"
             variant="body1"
           >
-            {`${moment().format('hh:mm A')} ${user.timezone}`}
+            {`${moment().format('hh:mm A')}`}
           </Typography>
         </Box>
       </CardContent>
       <Divider />
       <CardActions>
-        <Button
-          color="primary"
-          fullWidth
-          variant="text"
-        >
+        <Button color="primary" fullWidth variant="text">
           Upload picture
         </Button>
       </CardActions>
